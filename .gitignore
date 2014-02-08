@@ -4,3 +4,13 @@
 *.jar
 *.war
 *.ear
+
+# build dir#
+build
+target
+
+# IDEA files #
+*.ipr
+*.iml
+.idea
+*.iws

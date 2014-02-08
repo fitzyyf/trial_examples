@@ -1,0 +1,39 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+
+defaultTasks 'build'
+
+group = 'org.yfproj'
+version = new Version(major: 3, stage: 'beta3')
+
+
+ext {
+    fullName = 'Akka&NIO'
+
+    akkaVersion = '2.0.5'
+    guavaVersion = '13.0.1'
+}
+
+repositories {
+	mavenCentral()
+	maven {
+		url "http://repo.typesafe.com/typesafe/releases/"
+	}    
+}
+
+dependencies {
+    compile(
+            "com.typesafe.akka:akka-actor:${akkaVersion}",
+            "com.google.guava:guava:${guavaVersion}"
+    )
+}
+
+class Version {
+	int major, minor = 0, revision = 0
+	String stage
+
+	String toString() {
+		"$major.$minor.$revision${stage ? '.' + stage : ''}"
+	}
+}
