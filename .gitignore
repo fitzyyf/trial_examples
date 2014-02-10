@@ -8,6 +8,7 @@
 # build dir#
 build
 target
+.gradle
 
 # IDEA files #
 *.ipr
